@@ -1,5 +1,6 @@
 package com.develogical;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.containsString;
@@ -30,4 +31,16 @@ public class QueryProcessorTest {
     public void isNotCaseSensitive() throws Exception {
         assertThat(queryProcessor.process("shakespeare"), containsString("playwright"));
     }
+
+    @Test
+    @Ignore
+    public void knowsLargestNumber() throws Exception {
+        assertThat(queryProcessor.process(""), containsString(""));
+    }
+
+    @Test
+    public void knowsAddNumbers() throws Exception {
+        assertThat(queryProcessor.process("what is 7 plus 18"), containsString("25"));
+    }
+
 }

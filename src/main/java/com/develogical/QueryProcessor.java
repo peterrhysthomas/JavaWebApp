@@ -1,5 +1,6 @@
 package com.develogical;
 
+import com.develogical.web.ExampleKt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,6 +18,9 @@ public class QueryProcessor {
         }
         if (query.toLowerCase().contains("your name")){
             result = "pete";
+        }
+        if (query.toLowerCase().contains("plus")){
+            result = ExampleKt.addNumbers(query.toLowerCase());
         }
         logger.error("Result is: " + result);
         return result;
