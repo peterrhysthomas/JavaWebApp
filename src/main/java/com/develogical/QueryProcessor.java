@@ -26,6 +26,9 @@ public class QueryProcessor {
         if (q.contains("largest")){
             result = ExampleKt.largestNumber(q);
         }
+        if (q.contains("multiplied")){
+            result = ExampleKt.multiply(q);
+        }
 
         logger.error("Result is: " + result);
         return result;

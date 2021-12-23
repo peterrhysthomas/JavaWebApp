@@ -12,3 +12,9 @@ fun largestNumber(query: String): String {
     val max =  query.split(":")[2].split(", ").map{it.trim().toInt()}.maxOrNull() ?: 0
     return max.toString()
 }
+
+fun multiply(query: String): String {
+    val numbers =  query.split(" ")
+    val result = numbers[3].toInt() * numbers[6].toInt()
+    return result.toString()
+}
