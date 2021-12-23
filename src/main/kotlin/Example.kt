@@ -4,6 +4,11 @@ fun printSomething(): String = "Hello World Another Time"
 
 fun addNumbers(query: String): String {
       val elements = query.split(" ")
-    val result = elements[2].toInt() + elements[4].toInt()
+    val result = elements[3].toInt() + elements[5].toInt()
     return result.toString()
+}
+
+fun largestNumber(query: String): String {
+    val max =  query.split(":")[2].split(", ").map{it.trim().toInt()}.maxOrNull() ?: 0
+    return max.toString()
 }

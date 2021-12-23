@@ -9,19 +9,24 @@ public class QueryProcessor {
     private static Logger logger = LoggerFactory.getLogger(QueryProcessor.class);
 
     public String process(String query) {
-        logger.error("Received query: " + query);
         String result = "";
-        if (query.toLowerCase().contains("shakespeare")) {
+        String q = query.toLowerCase();
+        logger.error("Received query: " + q);
+        if (q.contains("shakespeare")) {
             result =  "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
                     "English poet, playwright, and actor, widely regarded as the greatest " +
                     "writer in the English language and the world's pre-eminent dramatist.";
         }
-        if (query.toLowerCase().contains("your name")){
+        if (q.contains("your name")){
             result = "pete";
         }
-        if (query.toLowerCase().contains("plus")){
-            result = ExampleKt.addNumbers(query.toLowerCase());
+        if (q.contains("plus")){
+            result = ExampleKt.addNumbers(q);
         }
+        if (q.contains("largest")){
+            result = ExampleKt.largestNumber(q);
+        }
+
         logger.error("Result is: " + result);
         return result;
     }
