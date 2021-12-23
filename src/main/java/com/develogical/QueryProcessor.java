@@ -8,7 +8,7 @@ public class QueryProcessor {
     private static Logger logger = LoggerFactory.getLogger(QueryProcessor.class);
 
     public String process(String query) {
-        logger.debug("Received query: " + query);
+        logger.error("Received query: " + query);
         String result = "";
         if (query.toLowerCase().contains("shakespeare")) {
             result =  "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
@@ -18,7 +18,7 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("your name")){
             result = "pete";
         }
-        logger.debug("Result is: " + result);
+        logger.error("Result is: " + result);
         return result;
     }
 }
