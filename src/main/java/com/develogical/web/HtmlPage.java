@@ -17,7 +17,7 @@ public abstract class HtmlPage {
     private void writeHeaderTo(PrintWriter writer) {
         writer.println("<html>");
         writer.println("<head></head>");
-        writer.println("<body>Hello World!");
+        writer.println("<body>" + ExampleKt.printSomething());
     }
 
     private void writeFooterTo(PrintWriter writer) {
